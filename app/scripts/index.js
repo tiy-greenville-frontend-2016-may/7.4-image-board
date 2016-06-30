@@ -9,10 +9,10 @@ var ImageBoardView = require('./components/image-board.jsx');
 $(function(){
   var imageCollection = new ImageCollection();
 
-  imageCollection.fetch().done(function(){
-    ReactDOM.render(
-      React.createElement(ImageBoardView, {images: imageCollection}),
-      document.getElementById('app')
-    );
-  });
+  ReactDOM.render(
+    React.createElement(ImageBoardView, {images: imageCollection}),
+    document.getElementById('app')
+  );
+    
+  imageCollection.fetch();
 });
